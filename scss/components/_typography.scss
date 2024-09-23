@@ -2,6 +2,7 @@
 // zurb.com/ink/
 // Licensed under MIT Open Source
 @use "sass:math";
+@use "sass:color";
 
 ////
 /// @group typography
@@ -149,7 +150,7 @@ $anchor-color-visited: $anchor-color !default;
 
 /// Text color of anchors on hover.
 /// @type Color
-$anchor-color-hover: darken($primary-color, 10%) !default;
+$anchor-color-hover: color.adjust($primary-color, $lightness: -10%, $space: hsl) !default;
 
 /// Text color of active anchors.
 /// @type Color
