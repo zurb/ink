@@ -69,7 +69,7 @@ $topbar-hover-color: lighten($topbar-background, 10%);
   background: $primary-color;
 
   &:hover {
-    background: darken($primary-color, 10%);
+    background: scale-color($primary-color, $lightness: -10%);
   }
 }
 
