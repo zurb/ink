@@ -1,6 +1,8 @@
 // Foundation for Emails by ZURB
 // zurb.com/ink/
 // Licensed under MIT Open Source
+@use "sass:color";
+@use "sass:map";
 
 ////
 /// @group button
@@ -71,13 +73,13 @@ table.button {
 
       a {
         font-family: $body-font-family;
-        font-size: map-get($button-font-size, default);
+        font-size: map.get($button-font-size, default);
         font-weight: $button-font-weight;
         color: $button-color;
         text-decoration: none;
         text-align: left;
         display: inline-block;
-        padding: map-get($button-padding, default);
+        padding: map.get($button-padding, default);
         border: 0 solid $button-background;
         border-radius: $button-radius;
       }
@@ -118,11 +120,11 @@ table.button.tiny {
   table {
     td,
     a {
-      padding: map-get($button-padding, tiny);
+      padding: map.get($button-padding, tiny);
     }
 
     a {
-      font-size: map-get($button-font-size, tiny);
+      font-size: map.get($button-font-size, tiny);
       font-weight: normal;
     }
   }
@@ -132,8 +134,8 @@ table.button.small {
   table {
     td,
     a {
-      padding: map-get($button-padding, small);
-      font-size: map-get($button-font-size, small);
+      padding: map.get($button-padding, small);
+      font-size: map.get($button-font-size, small);
     }
   }
 }
@@ -141,8 +143,8 @@ table.button.small {
 table.button.large {
   table {
     a {
-      padding: map-get($button-padding, large);
-      font-size: map-get($button-font-size, large);
+      padding: map.get($button-padding, large);
+      font-size: map.get($button-font-size, large);
     }
   }
 }
@@ -172,7 +174,7 @@ table.button:visited,
 table.button:active {
   table {
     td {
-      background: darken($button-background, 10%);
+      background: color.adjust($button-background, $lightness: -10%, $space: hsl);
       color: $button-color;
     }
   }
@@ -183,7 +185,7 @@ table.button:visited,
 table.button:active {
   table {
     a {
-      border: 0 solid darken($button-background, 10%);
+      border: 0 solid color.adjust($button-background, $lightness: -10%, $space: hsl);
     }
   }
 }
@@ -206,12 +208,12 @@ table.button.secondary {
 table.button.secondary:hover {
   table {
     td {
-      background: lighten($secondary-color, 10%);
+      background: color.adjust($secondary-color, $lightness: +10%, $space: hsl);
       color: $button-color;
     }
 
     a {
-      border: 0 solid lighten($secondary-color, 10%);
+      border: 0 solid color.adjust($secondary-color, $lightness: +10%, $space: hsl);
     }
   }
 }
@@ -256,11 +258,11 @@ table.button.success {
 table.button.success:hover {
   table {
     td {
-      background: darken($success-color, 10%);
+      background: color.adjust($success-color, $lightness: -10%, $space: hsl);
     }
 
     a {
-      border: 0 solid darken($success-color, 10%);
+      border: 0 solid color.adjust($success-color, $lightness: -10%, $space: hsl);
     }
   }
 }
@@ -281,11 +283,11 @@ table.button.alert {
 table.button.alert:hover {
   table {
     td {
-      background: darken($alert-color, 10%);
+      background: color.adjust($alert-color, $lightness: -10%, $space: hsl);
     }
 
     a {
-      border: 0 solid darken($alert-color, 10%);
+      border: 0 solid color.adjust($alert-color, $lightness: -10%, $space: hsl);
     }
   }
 }
@@ -306,11 +308,11 @@ table.button.warning {
 table.button.warning:hover {
   table {
     td {
-      background: darken($warning-color, 10%);
+      background: color.adjust($warning-color, $lightness: -10%, $space: hsl);
     }
 
     a {
-      border: 0px solid darken($warning-color, 10%);
+      border: 0 solid color.adjust($warning-color, $lightness: -10%, $space: hsl);
     }
   }
 }
